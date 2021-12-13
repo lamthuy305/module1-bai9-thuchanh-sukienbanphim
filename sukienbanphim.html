@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body onload="docReady()">
+<img src="https://james.codegym.vn/pluginfile.php/27447/mod_assign/intro/1.png" alt="" id="nobita" style="position: absolute; left: 0; top: 0">
+
+<script>
+    function nhanLen() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) - 10 + 'px';
+    }
+    function nhanXuong() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) + 10 + 'px';
+    }
+    function sangTrai() {
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) - 10 + 'px';
+    }
+    function sangPhai() {
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) + 10 + 'px';
+
+    }
+    function banPhim(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                sangTrai();
+                break;
+            case 39:
+                sangPhai();
+                break;
+            case 38:
+                nhanLen();
+                break;
+            case 40:
+                nhanXuong();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', banPhim);
+    }
+
+</script>
+</body>
+</html>
